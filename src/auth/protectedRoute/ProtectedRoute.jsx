@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = ({children}) => {
   const [isValid, setIsValid] = useState(null);
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -39,9 +39,15 @@ const ProtectedRoute = ({ children }) => {
     console.log('User data updated:',data);
   }, [data]);
 
-  if (isValid === null) return <div>Loading...</div>;
-  
-  return isValid ? children : <Navigate to="/" />;
+  if (isValid === null) return <div className="flex flex-col items-center justify-center min-h-screen">
+    <img width={'60px'} height={'60px'} src="../assets/loading.svg" alt="loading" />
+  </div>;
+  return (
+    <div className="min-h-screen">
+
+      {isValid ? children : <Navigate to="/" />}
+    </div>
+  );
 };
 
 ProtectedRoute.propTypes = {

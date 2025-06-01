@@ -1,37 +1,45 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { toast } from 'react-toastify'
 const LoginForm = () => {
   // State for form data
   const navigate = useNavigate();
-  const [formData,setFormData]=useState({
-    email:'',
-    password:''
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
   })
   //handleChange
-  const handleChange=(e)=>{
-    const {name,value}=e.target;
-    setFormData({...formData,[name]:value})
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value })
   }
   //handleSubmit
-  const handleSubmit=async(e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response=await axios.post('http://localhost:4000/api/auth/login',{
-        email:formData.email,
-        password:formData.password
+      const response = await axios.post('http://localhost:4000/api/auth/login', {
+        email: formData.email,
+        password: formData.password
       })
-      if(response){
-        navigate('/profile');
-        setFormData({
-          email:'',
-          password:''
-        })
-        alert('Login successful');
-        console.log('token',response.data.token);
-        localStorage.setItem('token',response.data.token)
+      if (response.status == 200) {
+        const token = response.data.token;
+        if (token) {
+          localStorage.setItem('token', token)
+          toast.success('Login successfully')
+          setTimeout(() => navigate('/hero'), 2000)
+          setFormData({
+            email: '',
+            password: ''
+          })
+          console.log('token', response.data.token);
+        }
+        else {
+          alert('Login failed. Please try again.');
+          return;
+        }
       }
-      
+
     } catch (error) {
       console.error(error);
       alert('Login failed. Please try again.');
@@ -43,7 +51,7 @@ const LoginForm = () => {
         <h2 className="text-2xl font-bold text-center mb-6">
           Login
         </h2>
-        <form  className="space-y-4">
+        <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Email</label>
             <input
@@ -71,15 +79,15 @@ const LoginForm = () => {
           <button
             onClick={handleSubmit}
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition hover:cursor-pointer"
+            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition hover:cursor-pointer grid place-items-center"
           >
-           Login
+            Login
           </button>
         </form>
 
         <p className="text-center mt-4 text-sm">
           {"Don't have an account?"}
-          <button onClick={()=>navigate('/register')} className="text-blue-600 underline hover:cursor-pointer">
+          <button onClick={() => navigate('/register')} className="text-blue-600 underline hover:cursor-pointer">
             Sign up
           </button>
         </p>
