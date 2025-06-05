@@ -35,7 +35,7 @@ const RegisterForm = () => {
           console.log('information', response.data);
         }
         else {
-          alert('Registration failed. Please try again.');
+          toast.error('Registration failed. Please try again.');
           return;
         }
       }

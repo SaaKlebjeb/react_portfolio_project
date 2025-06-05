@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.3.1",
     "@tailwindcss/vite": "^4.1.7",
     "axios": "^1.9.0",
+    "emailjs-com": "^3.2.0",
     "lucide-react": "^0.511.0",
     "motion": "^12.14.0",
     "react": "^18.3.1",

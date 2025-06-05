@@ -35,7 +35,7 @@ const LoginForm = () => {
           console.log('token', response.data.token);
         }
         else {
-          alert('Login failed. Please try again.');
+           toast.error('Login failed...!')
           return;
         }
       }
