@@ -56,7 +56,7 @@ const AboutChild = () => {
           </div>
         </div>
         {/*  */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
           <div>
             <div className="pt-6 shadow-md border-2 border-black rounded-md pl-12 hover:shadow-purple-600 h-[300px] transition-shadow duration-300">
               <h3 className="text-xl font-bold mb-2">Education</h3>
@@ -89,6 +89,7 @@ const AboutChild = () => {
               <ul className="space-y-2">
                 <li>Open Source Contributing</li>
                 <li>Learning New Technologies</li>
+                <li>Networking</li>
               </ul>
             </div>
           </div>
