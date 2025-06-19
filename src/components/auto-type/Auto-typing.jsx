@@ -1,7 +1,8 @@
 
 import TypeIt from 'typeit-react';
-import propTypes from 'prop-types';
-const AutoType = ({ text ,speed=100}) => {
+
+const AutoType = () => {
+const text = "My name is DA RAKSA";
   return (
     <div className="w-full h-auto p-6 sm:p-8 bg-white shadow-xl rounded-2xl space-y-6">
       {/* Welcome Heading */}
@@ -16,7 +17,7 @@ const AutoType = ({ text ,speed=100}) => {
       <TypeIt
         className="text-3xl sm:text-4xl font-bold font-mono text-[#5a29e4]"
         options={{
-          speed: speed,
+          speed: 100,
           waitUntilVisible: true,
           loop: true,
           cursor: true,
@@ -38,7 +39,3 @@ const AutoType = ({ text ,speed=100}) => {
   );
 };
 export default AutoType;
-AutoType.propTypes = {
-  text: propTypes.string,
-  speed: propTypes.number
-};

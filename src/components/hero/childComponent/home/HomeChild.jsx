@@ -31,8 +31,9 @@ const HomeChild = () => {
             inclusive, performant, and delightful.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={()=>navigate('/hero/projectsChild')}  className="px-6 py-3 bg-primary text-purple-600 font-semibold hover:cursor-pointer hover:bg-purple-600 hover:text-white hover:scale-95 transition-colors active:scale-105 duration-300 rounded-lg shadow-lg border-2 border-purple-600 hover:bg-primary-dark">
-              View Projects
+            <button onClick={()=>navigate('/hero/projectsChild')}  className="px-7 flex  py-3 bg-primary text-purple-600 space-x-2 font-semibold hover:cursor-pointer hover:bg-purple-600 hover:text-white hover:scale-95 transition-colors active:scale-105 duration-300 rounded-lg shadow-lg border-2 border-purple-600 hover:bg-primary-dark">
+              <i className="size-4 mt-0.5 fi fi-rr-hand-back-point-right"></i>
+              <span>View Projects</span>
             </button>
            
           </div>

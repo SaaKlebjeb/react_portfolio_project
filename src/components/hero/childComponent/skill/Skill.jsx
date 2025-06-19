@@ -76,6 +76,7 @@ const SkillChild = () => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s",
     "https://img.icons8.com/ios_filled/512/github.png",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGp2RKrzqJF2Cu3dxnk2RGK_F7SSloJG-Wyw&s",
+    "https://www.svgrepo.com/show/354202/postman-icon.svg"
   ];
   //
   const [activeTab, setActiveTab] = useState(skillCategories[0]?.id);

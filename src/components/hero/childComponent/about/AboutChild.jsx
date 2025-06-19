@@ -44,9 +44,9 @@ const AboutChild = () => {
                 <p className="font-semibold text-white">Contact Me</p>
               </button>
               <a
-                href="/MyNewCV.pdf"
+                href="/assets/MyNewCV.pdf"
                 download="MyNewCV.pdf"
-                className="px-5 py-3 transition hover:bg-gray-600 duration-300 active:scale-95  flex justiy-center items-center space-x-3 rounded-lg bg-black hover:cursor-pointer"
+                className="px-5 py-3 transition hover:bg-gray-600 duration-300 active:scale-95  flex justify-center items-center space-x-3 rounded-lg bg-black hover:cursor-pointer"
               >
                 <i className="fi fi-rr-download text-lg text-white"></i>
                 <p className="font-semibold text-white">Download CV</p>

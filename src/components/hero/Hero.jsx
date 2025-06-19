@@ -40,7 +40,7 @@ const Hero = () => {
             ))}
            </div>
             <a
-              href="/MyNewCV.pdf"
+              href="/assets/MyNewCV.pdf"
               download='MyNewCV.pdf'
               className=" px-4 flex justify-center items-center border-2 rounded-md font-bold text-sm md:text-md  text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white transition"
             >

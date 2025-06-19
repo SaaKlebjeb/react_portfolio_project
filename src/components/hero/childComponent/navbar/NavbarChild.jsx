@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 const navLinks = [
     { name: "Home", path: "/homeChild" },
@@ -8,6 +9,12 @@ const navLinks = [
     { name: "Contact", path: "/contactsChild" },
 ]
 const NavbarChild = () => {
+    const [activeTab,setActiveTab] = useState("/homeChild");
+
+    const handleTabChange = (path) => {
+        localStorage.setItem("activeTab", path);
+        setActiveTab(localStorage.getItem("activeTab") || path);
+    }
     return (
         <div>
             <div className="flex items-center justify-between">
@@ -19,8 +26,9 @@ const NavbarChild = () => {
                 <div className="hidden md:flex items-center space-x-8">
                     {navLinks.map((link) => (
                         <Link
+                            onClick={() => handleTabChange(link.path)}
                             key={link.path}
-                            className="text-sm font-medium hover:text-primary transition-colors"
+                            className={`text-sm font-medium hover:text-primary transition-colors ${activeTab===link.path?"text-primary":"text-gray-600"}`}
                             to={link.path}
                         >
                             {link.name}

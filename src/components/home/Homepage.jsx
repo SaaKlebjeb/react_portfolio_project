@@ -5,7 +5,6 @@ import axios from 'axios'
 import { useEffect,useState } from "react";
 
 export default function Homepage() {
-  const text = "My name is DA RAKSA";
    const [isValid, setIsValid] = useState(null);
       const [data, setData] = useState(null);
     const navigate=useNavigate()
@@ -52,7 +51,7 @@ export default function Homepage() {
           
           {/* Left Side: AutoType Section */}
           <div className="flex flex-col items-start space-y-6">
-            <AutoType text={text}  />
+            <AutoType/>
 
             <button
               type="button"
