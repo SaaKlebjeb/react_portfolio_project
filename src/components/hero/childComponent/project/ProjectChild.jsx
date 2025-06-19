@@ -43,7 +43,7 @@ const ProjectChild = () => {
       image: "../assets/portfolio.png",
       tags: ["React", "Framer Motion", "Tailwind CSS"],
       github: "https://github.com/SaaKlebjeb/react_portfolio_project",
-      demo: "https://example.com",
+      demo: "https://react-portfolio-project-drab.vercel.app/",
       featured: false,
     }]
 
