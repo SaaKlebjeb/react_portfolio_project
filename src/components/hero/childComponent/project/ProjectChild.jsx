@@ -40,9 +40,9 @@ const ProjectChild = () => {
       title: "Portfolio Website",
       description:
         "A responsive portfolio website showcasing projects and skills, built with modern web technologies and animations.",
-      image: "https://images.klipfolio.com/website/public/6f1b14b5-1d2d-4a30-ac82-30869ca03ba4/powermetrics-dashboard_0.jpg",
+      image: "../assets/portfolio.png",
       tags: ["React", "Framer Motion", "Tailwind CSS"],
-      github: "https://github.com",
+      github: "https://github.com/SaaKlebjeb/react_portfolio_project",
       demo: "https://example.com",
       featured: false,
     }]

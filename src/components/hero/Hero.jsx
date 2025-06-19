@@ -17,8 +17,8 @@ const Hero = () => {
   const isActive = (path) => location.pathname.includes(path);
 
   return (
-    < div className=" min-h-screen bg-gradient-to-br from-purple-600 via-[#f0f4ff] to-blue-600 ">
-      <header className="sticky top-0 z-50 bg-transparent px-3 bg-gradient-to-br from-purple-600 via-[#f0f4ff] to-blue-600 shadow-md" style={{ backdropFilter: "blur(10px)" }}>
+    < div className=" min-h-screen bg-gradient-to-br from-purple-600 via-gray-300 to-blue-600 ">
+      <header className="sticky top-0 z-50 bg-transparent px-3 bg-gradient-to-br from-purple-600 via-gray-300 to-blue-600 shadow-md" style={{ backdropFilter: "blur(10px)" }}>
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center  ">
           <Link to="homeChild" className="text-2xl lg:text-3xl font-bold text-purple-600">
             Portfolio
@@ -26,7 +26,7 @@ const Hero = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex space-x-4 ">
-           <div className="rounded-full flex justify-center items-center py-3 shadow-2xl hover:shadow-sky-400 group transition blur-[0.5px] hover:blur-[0.2px]" >
+           <div className="rounded-full flex justify-center items-center py-3 shadow-2xl hover:shadow-sky-400 group transition " >
              {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -42,7 +42,7 @@ const Hero = () => {
             <a
               href="/MyNewCV.pdf"
               download='MyNewCV.pdf'
-              className="ml-4 px-5 py-3 border-2 rounded font-bold text-sm md:text-md  text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white transition"
+              className=" px-4 flex justify-center items-center border-2 rounded-md font-bold text-sm md:text-md  text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white transition"
             >
               Resume
             </a>

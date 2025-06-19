@@ -142,7 +142,7 @@ const SkillChild = () => {
         </div>
         {/* technologies */}
         <div className="mt-20 rounded-md p-4 ">
-          <h3 className="text-3xl font-bold text-center mb-8">
+          <h3 className="text-xl font-serif font-bold text-center mb-8">
             Technologies I Work With
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">

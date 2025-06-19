@@ -52,7 +52,7 @@ export default function Homepage() {
           
           {/* Left Side: AutoType Section */}
           <div className="flex flex-col items-start space-y-6">
-            <AutoType text={text} speed={100} />
+            <AutoType text={text}  />
 
             <button
               type="button"

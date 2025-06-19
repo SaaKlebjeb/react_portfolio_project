@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import TypeIt from 'typeit-react';
 
-const AutoType = ({ text, speed = 100 }) => {
+import TypeIt from 'typeit-react';
+import propTypes from 'prop-types';
+const AutoType = ({ text ,speed=100}) => {
   return (
     <div className="w-full h-auto p-6 sm:p-8 bg-white shadow-xl rounded-2xl space-y-6">
       {/* Welcome Heading */}
@@ -37,10 +37,8 @@ const AutoType = ({ text, speed = 100 }) => {
     </div>
   );
 };
-
-AutoType.propTypes = {
-  text: PropTypes.string.isRequired,
-  speed: PropTypes.number.isRequired,
-};
-
 export default AutoType;
+AutoType.propTypes = {
+  text: propTypes.string,
+  speed: propTypes.number
+};
