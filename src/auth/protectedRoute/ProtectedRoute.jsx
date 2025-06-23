@@ -1,7 +1,6 @@
 import { Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 const ProtectedRoute = ({children}) => {
   const [isValid, setIsValid] = useState(null);
@@ -14,13 +13,15 @@ const ProtectedRoute = ({children}) => {
           setIsValid(false);
           return;
         }
-        const res = await axios.get(import.meta.env.VITE_URL_PROFILE, {
+        const res = await fetch(import.meta.env.VITE_URL_PROFILE, {
+          method:'GET',
           headers: {
-            Authorization: `Bearer ${token}`,
-          },
+            'Authorization': `Bearer ${token}`,
+          }
         });
-        if (res.data && res.data.userInfo) {
-          setData(res.data.userInfo); // Store the object directly
+        if (res.ok) {
+          const res2 = await res.json();
+          setData(res2.userInfo); // Store the object directly
           setIsValid(true);
         } else {
           setIsValid(false);

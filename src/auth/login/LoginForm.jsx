@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify'
@@ -18,12 +18,19 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(import.meta.env.VITE_URL_LOGIN, {
-        email: formData.email,
-        password: formData.password
+      const response = await fetch(import.meta.env.VITE_URL_LOGIN, {
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password
+        })
       })
-      if (response.status == 200) {
-        const token = response.data.token;
+      if (response.ok) {
+        const data=await response.json()
+        const token =data.token;
         if (token) {
           localStorage.setItem('token', token)
           toast.success('Login successfully')
@@ -32,7 +39,7 @@ const LoginForm = () => {
             email: '',
             password: ''
           })
-          console.log('token', response.data.token);
+          console.log('token', data.token);
         }
         else {
            toast.error('Login failed...!')

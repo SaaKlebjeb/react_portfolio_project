@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify'
-import axios from "axios";
 const RegisterForm = () => {
   // State for form data
   const [formData, setFormData] = useState({
@@ -18,12 +17,20 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(import.meta.env.VITE_URL_REGISTER, {
+      const response = await fetch(import.meta.env.VITE_URL_REGISTER, {
+       method:'POST',
+       headers:{
+          'Content-Type': 'application/json'
+       },
+       body:JSON.stringify({
         email: formData.email,
         password: formData.password
+       })
+
       });
-      if (response.status == 200) {
-        const token = response.data.token;
+      if (response.ok) {
+        const data=await response.json()
+        const token = data.token;
         if (token) {
           localStorage.setItem('token', token)
           toast.success('Registration successfully')
@@ -32,7 +39,7 @@ const RegisterForm = () => {
             email: '',
             password: ''
           })
-          console.log('information', response.data);
+          console.log('information', data);
         }
         else {
           toast.error('Registration failed. Please try again.');

@@ -59,15 +59,15 @@ const ProjectChild = () => {
       </div>
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3   gap-6 mt-10 w-full">
         {
-          projects.map((item)=>(
-            <>
-            <div className="px-5 py-5  rounded-lg border-purple-500 border-2 bg-white hover:shadow-2xl hover:shadow-purple-600 transition" style={{backdropFilter:'blur(15px)'}} key={item.id}>
+          projects.map((item,idx)=>(
+            
+            <div key={idx} className="px-5 py-5  rounded-lg border-purple-500 border-2 bg-white hover:shadow-2xl hover:shadow-purple-600 transition" style={{backdropFilter:'blur(15px)'}}>
               <img src={item.image} alt={item.title} className="w-full h-48 object-cover rounded-lg mb-4" />
               <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
               <p className="text-gray-800 mb-4">{item.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {item.tags.map((tag) => (
-                  <span key={tag} className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
+                {item.tags.map((tag,index) => (
+                  <span key={index} className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
                     {tag}
                   </span>
                 ))}
@@ -83,7 +83,7 @@ const ProjectChild = () => {
                 </a>
               </div>
             </div>
-            </>
+            
           ))
         }
         
